@@ -2,6 +2,11 @@
 requires = ["setuptools>=43.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["*"]
+exclude = ["logs", "docker", "figures", "scripts", "docs"]
+
 [project]
 name = "shelfwise-backend"
 version = "0.1.0"
@@ -14,5 +19,9 @@ dependencies = [
     "ultralytics",
     "Pillow",
     "numpy",
-    "opencv-python-headless"
+    "opencv-python-headless",
+    "autodistill-grounding-dino",
+    "xgboost",
+    "scikit-learn",
+    "pandas"
 ]

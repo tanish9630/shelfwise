@@ -1,16 +1,18 @@
+
 # Python Virtual Environments
 .venv/
 **/.venv/
 venv/
 __pycache__/
 
-# Datasets and Heavy Folders (git gets blocked by uploading heavy folders)
+# Datasets and Heavy Folders
 datasets/
 yolov8_dataset_export (1)/
 _ultralytics_backup/
 *.cache
 *.mp4
 
-# PyTorch and YOLO Runs (We will manually force-add best.pt later)
+# PyTorch and YOLO Runs
 runs/
 *.pt
+
