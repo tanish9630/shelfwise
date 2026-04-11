@@ -1,5 +1,16 @@
-datasets/coco8/
-runs/
-*.pt
+# Python Virtual Environments
+.venv/
+**/.venv/
 venv/
 __pycache__/
+
+# Datasets and Heavy Folders (git gets blocked by uploading heavy folders)
+datasets/
+yolov8_dataset_export (1)/
+_ultralytics_backup/
+*.cache
+*.mp4
+
+# PyTorch and YOLO Runs (We will manually force-add best.pt later)
+runs/
+*.pt

@@ -20,7 +20,7 @@ export default function Dashboard() {
             Shelfwise
           </Link>
         </div>
-        
+
         <nav className="flex-1 px-4 space-y-2">
           {[
             { icon: LayoutDashboard, label: "Overview", active: true },
@@ -51,13 +51,13 @@ export default function Dashboard() {
         <header className="h-16 border-bottom border-border flex items-center justify-between px-8 bg-card/50 backdrop-blur-md">
           <div className="relative w-96">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={16} />
-            <input 
-              type="text" 
-              placeholder="Search assets, items, or shelves..." 
+            <input
+              type="text"
+              placeholder="Search assets, items, or shelves..."
               className="w-full bg-muted/50 border border-border rounded-full py-1.5 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
             />
           </div>
-          
+
           <div className="flex items-center gap-4">
             <Button variant="ghost" size="icon" className="rounded-full">
               <Bell size={20} />
@@ -83,7 +83,7 @@ export default function Dashboard() {
           {/* Stats Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {stats.map((stat, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

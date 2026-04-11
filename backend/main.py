@@ -1,6 +1,6 @@
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from ultralytics import YOLOv10
+from ultralytics import YOLO
 import numpy as np
 import cv2
 import io
@@ -18,16 +18,26 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Load model (lazy loading or at startup)
-# Using yolov10m as primary model
-MODEL_PATH = "jameslahm/yolov10m"
+# Using our brand new fine-tuned model
+MODEL_PATH = r"C:\Users\Arjun Suthar\OneDrive\Desktop\shelfwise\runs\detect\train9\weights\best.pt"
 model = None
 
 @app.on_event("startup")
 async def load_model():
     global model
-    print(f"Loading YOLOv10 model: {MODEL_PATH}...")
-    model = YOLOv10.from_pretrained(MODEL_PATH)
+    print(f"Loading custom fine-tuned YOLO model: {MODEL_PATH}...")
+    model = YOLO(MODEL_PATH)
+    
+    # Map the English names back so the API returns human-readable json
+    model.model.names = {
+        0: "Product",
+        1: "Stockout",
+        2: "Label_Price",
+        3: "Label_Promo",
+        4: "Obstruction",
+        5: "Shelf_Rail"
+    }
+    
     print("Model loaded successfully.")
 
 @app.get("/")
