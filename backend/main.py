@@ -60,7 +60,7 @@ def patch_bert():
 patch_bert()
 
 # Models & Services
-MODEL_PATH = r"C:\Users\Arjun Suthar\OneDrive\Desktop\shelfwise\runs\detect\train_ultimate\weights\best.pt"
+MODEL_PATH = r"C:\Users\Arjun Suthar\OneDrive\Desktop\shelfwise\runs\detect\runs\detect\train_ultimate\weights\best.pt"
 yolo_model = None
 gdino_model = None
 gdino_ontology = None
